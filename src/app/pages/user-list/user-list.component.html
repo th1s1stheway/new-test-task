@@ -12,6 +12,12 @@
 <h1>Список ресурсов</h1>
 <ul>
   <li *ngFor="let resource of resources">
-    <p>ID: {{ resource.id }}, Name: {{ resource.name }}, Color: {{ resource.color }}</p>
+    <strong>{{ resource.name }}</strong>
+    <br>
+    Year: {{ resource.year }}
+    <br>
+    Color: <span [style.color]="resource.color">{{ resource.color }}</span>
+    <br>
+    Pantone Value: {{ resource.pantone_value }}
   </li>
 </ul>

@@ -1,1 +1,14 @@
 <p>user-info works!</p>
+
+<h2>Детали пользователя</h2>
+<form (ngSubmit)="updateUser()">
+  <label>
+    Имя:
+    <input [(ngModel)]="user.first_name" name="firstName" required>
+  </label>
+  <label>
+    Фамилия:
+    <input [(ngModel)]="user.last_name" name="lastName" required>
+  </label>
+  <button type="submit">Сохранить изменения</button>
+</form>

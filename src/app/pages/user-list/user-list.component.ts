@@ -38,12 +38,14 @@ export class UserListComponent implements OnInit{
   }
 
   viewUser(id: number): void {
-    this.router.navigate(['/user', id]);
+    this.router.navigate(['/userList', id]);
   }
 
   deleteUser(id: number): void {
     this.dataService.deleteUser(id).subscribe(() => {
-      this.loadUsers(); // Обновляем список пользователей
+      this.users = this.users.filter(user => user.id !== id);
+    }, error => {
+      console.error('Ошибка при удалении пользователя:', error);
     });
   }
 }

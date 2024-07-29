@@ -7,9 +7,11 @@ import { UserListComponent } from './app/pages/user-list/user-list.component';
 import { UserInfoComponent } from './app/pages/user-info/user-info.component';
 
 const routes = [
-  //{ path: '', component: UserListComponent, pathMatch: 'full' },
-  { path: 'userInfo', component: UserInfoComponent },
-  { path: 'userList', component: UserListComponent }
+  //{ path: '', component: UserListComponent, pathMatch: "full" },
+  { path: 'userList', component: UserListComponent },
+  { path: 'userList/:id', component: UserInfoComponent },
+  //{ path: 'login', component: LoginComponent },
+  //{ path: 'register', component: RegisterComponent }
 ];
 
 bootstrapApplication(AppComponent,  {providers: [provideHttpClient(), provideRouter(routes)]})

@@ -22,37 +22,36 @@ interface Resource {
   providedIn: 'root'
 })
 export class DataService {
-  private usersUrl = 'https://reqres.in/api/users?page=2';
-  private resourcesUrl = 'https://reqres.in/api/unknown';
+  private baseUrl = 'https://reqres.in/api';
 
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {
-    return this.http.get(this.usersUrl);
+    return this.http.get(`${this.baseUrl}/users?page=2`);
   }
 
   getResources(): Observable<any> {
-    return this.http.get(this.resourcesUrl);
+    return this.http.get(`${this.baseUrl}/unknown`);
   }
 
   getUserById(id: number): Observable<any> {
-    return this.http.get(`https://reqres.in/api/users/${id}`);
+    return this.http.get(`${this.baseUrl}/users/${id}`);
   }
 
-  updateUser(id: number, userData: any): Observable<any> {
-    return this.http.put(`https://reqres.in/api/users/${id}`, userData);
+  updateUser(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/users/${id}`, data);
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`https://reqres.in/api/users/${id}`);
+    return this.http.delete(`${this.baseUrl}/users/${id}`);
   }
 
-  login(credentials: any): Observable<any> {
-    return this.http.post('https://reqres.in/api/login', credentials);
+  login(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/login`, data);
   }
 
-  register(userData: any): Observable<any> {
-    return this.http.post('https://reqres.in/api/register', userData);
+  register(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/register`, data);
   }
 }
 
