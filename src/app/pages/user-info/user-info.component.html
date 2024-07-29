@@ -1,5 +1,6 @@
-<p>user-info works!</p>
 
+<img [src]="user.avatar" [alt]="user.first_name + ' ' + user.last_name" />
+<p>{{ user.first_name }} {{ user.last_name }} (Email: {{ user.email }})</p>
 <h2>Детали пользователя</h2>
 <form (ngSubmit)="updateUser()">
   <label>
