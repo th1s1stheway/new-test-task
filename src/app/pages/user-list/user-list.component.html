@@ -1,0 +1,17 @@
+<p>works</p>
+<h1>Список пользователей</h1>
+<ul>
+  <li *ngFor="let user of users">
+    <img [src]="user.avatar" [alt]="user.first_name + ' ' + user.last_name" />
+    <p>{{ user.first_name }} {{ user.last_name }} (Email: {{ user.email }})</p>
+    <button (click)="viewUser(user.id)">Просмотреть</button>
+    <button (click)="deleteUser(user.id)">Удалить</button>
+  </li>
+</ul>
+
+<h1>Список ресурсов</h1>
+<ul>
+  <li *ngFor="let resource of resources">
+    <p>ID: {{ resource.id }}, Name: {{ resource.name }}, Color: {{ resource.color }}</p>
+  </li>
+</ul>
