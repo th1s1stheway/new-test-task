@@ -5,9 +5,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { UserListComponent } from './app/pages/user-list/user-list.component';
 import { UserInfoComponent } from './app/pages/user-info/user-info.component';
+import { Routes } from '@angular/router';
 
-const routes = [
-  //{ path: '', component: UserListComponent, pathMatch: "full" },
+const routes: Routes = [
+  { path: '', component: UserListComponent, pathMatch: 'full' },
   { path: 'userList', component: UserListComponent },
   { path: 'userList/:id', component: UserInfoComponent },
   //{ path: 'login', component: LoginComponent },

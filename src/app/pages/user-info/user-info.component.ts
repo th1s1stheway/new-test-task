@@ -16,7 +16,6 @@ export class UserInfoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dataService: DataService) {}
 
   ngOnInit(): void {
-    // Исправление ошибки 1: проверяем, что параметр 'id' существует
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       // Преобразуем 'id' из строки в число
@@ -27,7 +26,6 @@ export class UserInfoComponent implements OnInit {
   }
 
   updateUser() {
-    // Исправление ошибки 2: передаем 'this.user' в качестве аргумента
     this.dataService.updateUser(this.user.id, this.user).subscribe();
   }
 
